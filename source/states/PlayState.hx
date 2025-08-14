@@ -4,7 +4,7 @@ import data.Paths;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import objects.Button;
+import objects.*;
 
 class PlayState extends FlxState
 {
@@ -12,7 +12,11 @@ class PlayState extends FlxState
 
 	public var countnumber:Float = 0;
 
+	public var countmodifier:Float = 1;
+
 	var text:FlxText;
+
+	var uibutton:UIButton;
 
 	override public function create()
 	{
@@ -23,6 +27,9 @@ class PlayState extends FlxState
 		button.updateHitbox();
 		button.screenCenter();
 		add(button);
+		uibutton = new UIButton(570, 225);
+		add(uibutton);
+		trace(uibutton.x + ' and' + uibutton.y);
 		text = new FlxText("Hello World", 32);
 		text.setFormat(Paths.font("Hwe_font-Regular.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		text.screenCenter();

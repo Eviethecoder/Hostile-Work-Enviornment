@@ -31,7 +31,7 @@ class Button extends FlxSprite
 			{
 				animation.play('pushed');
 
-				PlayState.instance.countnumber += 1;
+				PlayState.instance.countnumber += PlayState.instance.countmodifier;
 				pressedonce = true;
 			}
 			if (FlxG.mouse.justReleased)
